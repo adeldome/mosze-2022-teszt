@@ -24,6 +24,7 @@ int main() {
 
   average = (float) sum / N_ELEMENTS;
   std::cout << "Atlag: " << average << std::endl;
+  std::cout << "Hello World!" << std::endl;
 
   return 0;
 }
