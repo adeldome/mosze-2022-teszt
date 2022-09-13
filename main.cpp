@@ -2,25 +2,28 @@
 
 constexpr int N_ELEMENTS = 100;
 
-int main()
-{
-    int *b = new int[NELEMENTS]; //typo N_ELEMENTS , és nem kell a heapre allokálni a new keyword segítségével, mivel az N_ELEMENTS egy constexpr változó 
-    std::cout << '1-100 ertekek duplazasa' // '' helyett lehetne "" és hiányzik egy ;
-    for (int i = 0;) // hibás ciklus
-    {
-        b[i] = i * 2;
-    }
-    for (int i = 0; i; i++) // hibás ciklusfeltétel és ciklusmag
-    {
-        std::cout << "Ertek:"
-    }    
-    std::cout << "Atlag szamitasa: " << std::endl;
-    int atlag; // nem árt ha nullára inicializáljuk
-    for (int i = 0; i < N_ELEMENTS, i++) // a ciklus definicióban hiányzik egy pontosvesszo
-    {
-        atlag += b[i]
-    }
-    atlag /= N_ELEMENTS;
-    std::cout << "Atlag: " << atlag << std::endl;
-    return 0;
+int main() {
+  int sum, b[N_ELEMENTS];
+  float average;
+
+  std::cout << "1-100 ertekek duplazasa:" << std::endl;
+
+  for (int i = 1; i <= N_ELEMENTS; i++) {
+    b[i] = i * 2;
+    std::cout << "Ertek:" << b[i] << std::endl;
+  }
+
+  std::cout << "Atlag szamitasa: " << std::endl;
+
+  sum = 0;
+  average = 0;
+
+  for (int i = 1; i <= N_ELEMENTS; i++) {
+    sum += b[i];
+  }
+
+  average = (float) sum / N_ELEMENTS;
+  std::cout << "Atlag: " << average << std::endl;
+
+  return 0;
 }
